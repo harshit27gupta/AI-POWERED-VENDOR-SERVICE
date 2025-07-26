@@ -1,0 +1,29 @@
+{
+  "name": "ai-service",
+  "version": "1.0.0",
+  "description": "AI service using Google Gemini API",
+  "main": "ai-service.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ai-service.js",
+    "dev": "nodemon ai-service.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "@google/generative-ai": "^0.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "mongoose": "^8.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [
+    "ai",
+    "gemini",
+    "google",
+    "chatbot"
+  ],
+  "author": "",
+  "license": "MIT"
+} 
