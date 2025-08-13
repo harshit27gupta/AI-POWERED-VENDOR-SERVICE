@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Registration - Step 3</title>
+    <link rel="stylesheet" href="style_vendor.css">
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <form action="">
+                <h2>Add Your Services</h2>
+                <div class="list-container">
+                    <h3 class="sub-heading">Services & Pricing</h3>
+                    <div class="item-card">
+                        <p><strong>Service:</strong> Web Development</p>
+                        <p><strong>Description:</strong> Custom web applications...</p>
+                        <p><strong>Price:</strong> ₹25,000 - ₹150,000</p>
+                        <p><strong>Duration:</strong> 2-8 weeks</p>
+                        <a href="#" class="remove-link">[Remove]</a>
+                    </div>
+                     <div class="item-card">
+                        <p><strong>Service:</strong> API Development</p>
+                        <p><strong>Description:</strong> RESTful and GraphQL APIs</p>
+                        <p><strong>Price:</strong> ₹15,000 - ₹80,000</p>
+                        <p><strong>Duration:</strong> 1-4 weeks</p>
+                        <a href="#" class="remove-link">[Remove]</a>
+                    </div>
+                </div>
+
+                <button type="button" class="btn-add">+ Add Another Service</button>
+
+                <div class="add-new-container">
+                    <h3 class="sub-heading">Add New Service</h3>
+                    <div class="input-box">
+                        <input type="text" placeholder=" ">
+                        <label>Service Name</label>
+                    </div>
+                     <div class="input-box">
+                        <input type="text" placeholder=" ">
+                        <label>Description</label>
+                    </div>
+                    <div class="address-group">
+                        <div class="input-box">
+                            <input type="text" placeholder=" ">
+                            <label>Min Price</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" placeholder=" ">
+                            <label>Max Price</label>
+                        </div>
+                    </div>
+                    <div class="address-group">
+                        <div class="input-box">
+                             <select required>
+                                <option value="" disabled selected></option>
+                                <option value="inr">INR</option>
+                                <option value="usd">USD</option>
+                            </select>
+                            <label>Currency</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" placeholder=" ">
+                            <label>Duration</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="navigation-group">
+                    <a href="page2.html" class="btn-prev navigation-group-btn">Back</a>
+                    <a href="page4.html" class="btn-next navigation-group-btn">Save & Continue</a>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

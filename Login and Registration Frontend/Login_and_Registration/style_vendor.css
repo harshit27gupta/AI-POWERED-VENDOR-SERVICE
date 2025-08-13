@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace;
+}
+/* ... (all the other CSS rules from the previous answer) ... */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1c1c1c;
+    color: #fff;
+    padding: 20px;
+}
+section {
+    padding: 40px 0;
+}
+.form-box {
+    position: relative;
+    width: 450px;
+    background: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.sub-heading {
+    font-size: 1.1em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+    padding-bottom: 5px;
+}
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #fff;
+    margin: 30px 0;
+}
+.input-box.textarea-box {
+    height: 100px;
+}
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-box select:focus ~ label,
+.input-box select:valid ~ label,
+.input-box input:focus ~ label,
+.input-box input:not(:placeholder-shown) ~ label,
+.input-box textarea:focus ~ label,
+.input-box textarea:not(:placeholder-shown) ~ label {
+    top: -5px;
+}
+.input-box input,
+.input-box textarea,
+.input-box select {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 35px 0 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.input-box select option{
+    background: #1c1c1c;
+}
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+}
+.radio-group {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.address-group {
+    display: flex;
+    gap: 20px;
+}
+.address-group .input-box {
+    width: 50%;
+}
+.btn-add {
+    background: transparent;
+    border: 1px dashed #fff;
+    color: #fff;
+    width: 100%;
+    height: 45px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    margin-top: 20px;
+}
+.input-box input[type="file"] {
+    opacity: 0;
+    cursor: pointer;
+}
+.input-box .file-label {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 35px;
+}
+.input-box input[type="file"]:focus ~ .file-label,
+.input-box input[type="file"]:valid ~ .file-label {
+    top: -5px;
+}
+.item-card {
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.item-card p {
+    margin: 3px 0;
+}
+.remove-link {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #ff4d4d;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+.add-new-container {
+    margin-top: 20px;
+}
+.navigation-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+}
+a.navigation-group-btn,
+.navigation-group button {
+    text-decoration: none;
+    text-align: center;
+    line-height: 45px;
+    display: block;
+    width: 100%;
+}
+.btn-prev {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    height: 45px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+}
+.btn-next {
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #1c1c1c;
+    font-weight: 500;
+}
+a.button-link {
+    display: block;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #1c1c1c;
+    font-weight: 500;
+    margin-top: 20px;
+    text-decoration: none;
+}
+.checkbox-group {
+    margin: 20px 0;
+}
+.checkbox-group.single-checkbox {
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 20px;
+}
+.checkbox-group label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1em;
+    user-select: none;
+}
+.checkbox-group input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.checkbox-group input:checked ~ .checkmark:after {
+    display: block;
+}
+.checkbox-group .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #00ff00;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* NEW STYLES FOR LOGIN PAGE */
+.forgot-link {
+    margin: -15px 0 15px;
+    text-align: right;
+}
+.forgot-link a,
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+.forgot-link a:hover,
+.register-link p a:hover {
+    text-decoration: underline;
+}
+.register-link {
+    font-size: 0.9em;
+    text-align: center;
+    margin: 25px 0 10px;
+}

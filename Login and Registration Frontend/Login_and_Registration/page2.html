@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Registration - Step 2</title>
+    <link rel="stylesheet" href="style_vendor.css">
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <form action="">
+                <h2>Add Your Skills</h2>
+                <div class="list-container">
+                    <h3 class="sub-heading">Skills & Expertise</h3>
+                    <div class="item-card">
+                        <p><strong>Skill:</strong> React</p>
+                        <p><strong>Experience:</strong> 5 years</p>
+                        <p><strong>Proficiency:</strong> Expert</p>
+                        <a href="#" class="remove-link">[Remove]</a>
+                    </div>
+                     <div class="item-card">
+                        <p><strong>Skill:</strong> Node.js</p>
+                        <p><strong>Experience:</strong> 4 years</p>
+                        <p><strong>Proficiency:</strong> Expert</p>
+                        <a href="#" class="remove-link">[Remove]</a>
+                    </div>
+                </div>
+
+                <button type="button" class="btn-add">+ Add Another Skill</button>
+
+                <div class="add-new-container">
+                    <h3 class="sub-heading">Add New Skill</h3>
+                    <div class="input-box">
+                        <input type="text" placeholder=" ">
+                        <label>Skill Name</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="number" placeholder=" ">
+                        <label>Years of Experience</label>
+                    </div>
+                    <div class="input-box">
+                        <select required>
+                            <option value="" disabled selected></option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="expert">Expert</option>
+                        </select>
+                         <label>Proficiency</label>
+                    </div>
+                </div>
+                
+                <div class="navigation-group">
+                    <a href="page1.html" class="btn-prev navigation-group-btn">Back</a>
+                    <a href="page3.html" class="btn-next navigation-group-btn">Save & Continue</a>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

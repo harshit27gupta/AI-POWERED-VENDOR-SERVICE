@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Registration - Step 5</title>
+    <link rel="stylesheet" href="style_vendor.css">
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <form action="">
+                <h2>Set Your Availability</h2>
+
+                <div class="checkbox-group single-checkbox">
+                    <h3 class="sub-heading">Business Availability</h3>
+                    <label>
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span>
+                        Available for new projects
+                    </label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="time-outline"></ion-icon></span>
+                    <select required>
+                        <option value="" disabled selected></option>
+                        <option value="1">Within 1 hour</option>
+                        <option value="2-4" selected>2-4 hours</option>
+                        <option value="4-8">4-8 hours</option>
+                        <option value="24">Within 24 hours</option>
+                    </select>
+                    <label>Response Time</label>
+                </div>
+
+                <div class="input-box">
+                     <span class="icon"><ion-icon name="briefcase-outline"></ion-icon></span>
+                    <input type="text" placeholder=" " value="9 AM - 6 PM IST">
+                    <label>Working Hours</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
+                    <select required>
+                        <option value="" disabled></option>
+                        <option value="ist" selected>IST (UTC+5:30)</option>
+                        <option value="gmt">GMT (UTC+0:00)</option>
+                        <option value="est">EST (UTC-5:00)</option>
+                    </select>
+                    <label>Time Zone</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <h3 class="sub-heading">Communication Preferences</h3>
+                    <label><input type="checkbox" checked><span class="checkmark"></span>Email</label>
+                    <label><input type="checkbox" checked><span class="checkmark"></span>Phone</label>
+                    <label><input type="checkbox" checked><span class="checkmark"></span>WhatsApp</label>
+                    <label><input type="checkbox" checked><span class="checkmark"></span>Video Call</label>
+                </div>
+                
+                <div class="navigation-group">
+                    <a href="page4.html" class="btn-prev navigation-group-btn">Back</a>
+                    <button type="submit" class="btn-next">Complete Registration</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

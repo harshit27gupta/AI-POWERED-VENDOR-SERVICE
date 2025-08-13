@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Registration - Step 1</title>
+    <link rel="stylesheet" href="style_vendor.css">
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <form action="">
+                <h2>Vendor Registration: Profile</h2>
+                <div class="radio-group">
+                    <label><input type="radio" name="vendor_type" value="individual" checked> Individual Freelancer</label>
+                    <label><input type="radio" name="vendor_type" value="company"> Company/Agency</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="business-outline"></ion-icon></span>
+                    <input type="text" required placeholder=" ">
+                    <label>Business Name / Full Name</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" required placeholder=" ">
+                    <label>Business Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                    <input type="tel" required placeholder=" ">
+                    <label>Phone Number</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" required placeholder=" ">
+                    <label>Password</label>
+                </div>
+                 <div class="input-box">
+                    <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
+                    <input type="file" id="profile-picture">
+                    <label class="file-label">Profile Picture (Optional)</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="document-text-outline"></ion-icon></span>
+                    <textarea required placeholder=" " maxlength="500"></textarea>
+                    <label>Bio/About (Max 500 characters)</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="globe-outline"></ion-icon></span>
+                    <input type="url" placeholder=" ">
+                    <label>Website/Portfolio URL</label>
+                </div>
+                <h3 class="sub-heading">Address Details</h3>
+                <div class="input-box">
+                    <input type="text" placeholder=" ">
+                    <label>Street Address</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder=" ">
+                    <label>City</label>
+                </div>
+                 <div class="address-group">
+                    <div class="input-box">
+                        <input type="text" placeholder=" ">
+                        <label>State</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" placeholder=" ">
+                        <label>Country</label>
+                    </div>
+                </div>
+                
+                <a href="page2.html" class="button-link">Save & Continue</a>
+
+                <div class="register-link">
+                    <p>Already have a vendor account? <a href="vendor_login.html">Login</a></p>
+                </div>
+
+            </form>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
