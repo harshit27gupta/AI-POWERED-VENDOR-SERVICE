@@ -17,11 +17,10 @@ class GeminiConnection {
 
     try {
       this.genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-      this.model = this.genAI.getGenerativeModel({ model: "gemini-pro" });
+      this.model = this.genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
       
       this.isInitialized = true;
       console.log('✅ Gemini AI initialized');
-
       return this.model;
     } catch (error) {
       console.error('❌ Gemini AI initialization error:', error);
@@ -70,12 +69,12 @@ class GeminiConnection {
   getStatus() {
     return {
       isInitialized: this.isInitialized,
-      model: this.model ? 'gemini-pro' : null
+      model: this.model ? 'gemini-2.5-flash' : null
     };
   }
 }
 
-// Create singleton instance
+    
 const geminiConnection = new GeminiConnection();
 
 export default geminiConnection; 

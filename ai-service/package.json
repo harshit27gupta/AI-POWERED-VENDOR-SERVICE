@@ -6,14 +6,19 @@
   "type": "module",
   "scripts": {
     "start": "node ai-service.js",
-    "dev": "nodemon ai-service.js"
+    "dev": "nodemon ai-service.js",
+    "seed": "node scripts/seedData.js",
+    "create-indexes": "node scripts/createIndexes.js",
+    "fix-indexes": "node scripts/fixIndexes.js",
+    "show-indexes": "node scripts/showIndexes.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
     "@google/generative-ai": "^0.2.1",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
-    "mongoose": "^8.0.3"
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
@@ -22,8 +27,10 @@
     "ai",
     "gemini",
     "google",
-    "chatbot"
+    "chatbot",
+    "search",
+    "marketplace"
   ],
   "author": "",
   "license": "MIT"
-} 
+}
