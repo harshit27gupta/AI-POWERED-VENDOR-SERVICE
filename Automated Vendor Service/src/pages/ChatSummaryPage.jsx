@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { getSocket } from '../lib/socket.js'
 
 export default function ChatSummaryPage() {
   const location = useLocation()

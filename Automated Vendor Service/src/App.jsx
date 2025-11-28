@@ -84,16 +84,16 @@ function App() {
                   </NavLink>
                   
                   <NavLink 
-                    to="/clients" 
+                    to="/chats" 
                     className={({isActive}) => `px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                       isActive 
                         ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300' 
                         : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-slate-700'
                     }`}
                   >
-                    Clients
+                    Chats
                   </NavLink>
-                  
+
                   <NavLink 
                     to="/chatbot" 
                     className={({isActive}) => `px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
@@ -129,8 +129,28 @@ function App() {
                   >
                     Search
                   </NavLink>
-                  
 
+                  <NavLink 
+                    to="/chats" 
+                    className={({isActive}) => `px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                      isActive 
+                        ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300' 
+                        : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-slate-700'
+                    }`}
+                  >
+                    My Vendors
+                  </NavLink>
+
+                  <NavLink 
+                    to="/feedbacks" 
+                    className={({isActive}) => `px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                      isActive 
+                        ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300' 
+                        : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-slate-700'
+                    }`}
+                  >
+                    Feedbacks
+                  </NavLink>
                 </>
               )}
             </nav>
@@ -143,7 +163,7 @@ function App() {
                   </div>
                   {/* Notification Bell */}
                   <div className="relative">
-                    <Link to="/clients" className="w-9 h-9 rounded-full bg-slate-800 text-white flex items-center justify-center" title="Notifications">
+                    <Link to="/chats" className="w-9 h-9 rounded-full bg-slate-800 text-white flex items-center justify-center" title="Notifications">
                       🔔
                     </Link>
                     {/* Badge placeholder; wire actual count when backend list endpoint exists */}

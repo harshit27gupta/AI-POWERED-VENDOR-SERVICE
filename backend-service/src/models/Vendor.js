@@ -74,6 +74,12 @@ const vendorSchema = new mongoose.Schema({
   isActive: { type: Boolean, default: true },
   isVerified: { type: Boolean, default: false },
   isProfileComplete: { type: Boolean, default: false },
+
+  // Rating aggregated from client feedback
+  rating: {
+    average: { type: Number, default: 0 },
+    totalReviews: { type: Number, default: 0 }
+  },
   
   // Timestamps
   lastActive: { type: Date, default: Date.now },

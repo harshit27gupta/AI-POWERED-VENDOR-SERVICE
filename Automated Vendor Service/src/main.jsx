@@ -20,9 +20,10 @@ import VendorPreviewPage from './pages/auth/VendorPreviewPage.jsx'
 
 import OnboardingPage from './pages/onboarding/OnboardingPage.jsx'
 import VendorRegistrationPageOld from './pages/vendor-registration/VendorRegistrationPage.jsx'
-import ClientsPage from './pages/ClientsPage.jsx'
 import ChatBotPage from './pages/ChatBotPage.jsx'
 import ChatSummaryPage from './pages/ChatSummaryPage.jsx'
+import ChatHistoryPage from './pages/ChatHistoryPage.jsx'
+import FeedbacksPage from './pages/FeedbacksPage.jsx'
 
 // Initialize theme before app mounts
 const savedTheme = localStorage.getItem('theme')
@@ -47,10 +48,11 @@ const router = createBrowserRouter([
       { path: 'register/new-vendor/step4', element: <VendorProjectsPage /> },
       { path: 'register/new-vendor/step5', element: <VendorAvailabilityPage /> },
       { path: 'register/new-vendor/preview', element: <VendorPreviewPage /> },
-                        { path: 'onboarding', element: <ProtectedRoute><OnboardingPage /></ProtectedRoute> },
-                  { path: 'clients', element: <ProtectedRoute><ClientsPage /></ProtectedRoute> },
-                  { path: 'chatbot', element: <ProtectedRoute><ChatBotPage /></ProtectedRoute> },
+      { path: 'onboarding', element: <ProtectedRoute><OnboardingPage /></ProtectedRoute> },
+      { path: 'chatbot', element: <ProtectedRoute><ChatBotPage /></ProtectedRoute> },
       { path: 'chat-summary', element: <ProtectedRoute><ChatSummaryPage /></ProtectedRoute> },
+      { path: 'chats', element: <ProtectedRoute><ChatHistoryPage /></ProtectedRoute> },
+      { path: 'feedbacks', element: <ProtectedRoute><FeedbacksPage /></ProtectedRoute> },
       { path: 'vendor-registration', element: <VendorRegistrationPageOld /> },
     ],
   },

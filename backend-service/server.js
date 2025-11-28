@@ -8,7 +8,9 @@ import authRouter from './src/routes/auth.js';
 import { connectMongo } from './src/db/mongoose.js';
 import vendorAIConfigRouter from './src/routes/vendorAIConfig.js';
 import offersRouter from './src/routes/offers.js';
+import chatHistoryRouter from './src/routes/chatHistory.js';
 import vendorRegistrationRouter from './src/routes/vendorRegistration.js';
+import vendorRatingRouter from './src/routes/vendorRating.js';
 
 dotenv.config();
 
@@ -58,6 +60,8 @@ app.use('/api/auth', authRouter);
 app.use('/api/vendor-registration', vendorRegistrationRouter);
 app.use('/api/vendor-ai-config', vendorAIConfigRouter);
 app.use('/api/offers', offersRouter);
+app.use('/api/chat-history', chatHistoryRouter);
+app.use('/api/vendors', vendorRatingRouter);
 
 const PORT = requireEnv('PORT');
 const MONGODB_URI = requireEnv('MONGODB_URI');

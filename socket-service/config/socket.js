@@ -1,5 +1,6 @@
 import { Server } from 'socket.io';
 import dotenv from 'dotenv';
+import { sendChatSummaryEmail } from './mailer.js';
 dotenv.config();
 class SocketConnection {
   constructor() {
@@ -73,12 +74,12 @@ class SocketConnection {
       // Agreement events
       socket.on('chat:client_agree', async (payload) => {
         try {
-          const { conversationId, vendorId, clientId, agreement } = payload || {}
+          const { conversationId, vendorId, clientId, agreement, contactDetails } = payload || {}
           if (!conversationId || !agreement) return
           const { default: Agreement } = await import('../models/Agreement.js')
           const doc = await Agreement.findOneAndUpdate(
             { conversationId },
-            { $set: { vendorId, clientId, ...agreement, status: 'client_agreed' } },
+            { $set: { vendorId, clientId, contactDetails, ...agreement, status: 'client_agreed' } },
             { upsert: true, new: true }
           )
           this.io.to(conversationId).emit('chat:agreement_client_agreed', { conversationId, agreement: doc })
@@ -86,15 +87,44 @@ class SocketConnection {
           try {
             const { default: Message } = await import('../models/Message.js')
             const { default: Conversation } = await import('../models/Conversation.js')
+            const { default: Vendor } = await import('../models/Vendor.js')
+            const { default: Client } = await import('../models/Client.js')
+
             const msgs = await Message.find({ conversationId }).sort({ createdAt: 1 }).lean()
             const history = msgs.map(m => ({ role: m.role, content: m.content }))
+
             const aiBase = process.env.AI_BASE_URL || 'http://localhost:3002'
             const resp = await fetch(`${aiBase}/api/chat/summarize`, {
-              method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ history })
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ history })
             })
             const data = await resp.json()
             const bullets = data?.bullets || []
-            await Conversation.findOneAndUpdate({ conversationId }, { status: 'completed', summary: bullets })
+            const updatedConversation = await Conversation.findOneAndUpdate(
+              { conversationId },
+              { status: 'completed', summary: bullets },
+              { new: true }
+            )
+
+            // Send summary email to vendor (best-effort)
+            try {
+              const vendor = vendorId ? await Vendor.findById(vendorId).lean() : null
+              const client = clientId ? await Client.findById(clientId).lean() : null
+              const contactInfo = doc?.contactDetails || contactDetails
+              if (vendor?.email) {
+                await sendChatSummaryEmail({
+                  to: vendor.email,
+                  vendorName: vendor.name,
+                  clientName: client?.name,
+                  bullets: updatedConversation?.summary || bullets,
+                  history,
+                  contactDetails: contactInfo || null
+                })
+              }
+            } catch (mailError) {
+              console.error('email error', mailError)
+            }
           } catch (e) { console.error('summary error', e) }
         } catch (e) { console.error('agreement error', e) }
       })
